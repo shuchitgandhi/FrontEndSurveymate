@@ -9,6 +9,7 @@ export default class AllProjects extends Component {
       pc:true,
       dataArray:[
         {
+          id:1,
           projectname:"abcd",
           customerimg:"doge_512.png",
           customername:"abcd1234",
@@ -19,6 +20,7 @@ export default class AllProjects extends Component {
           lastactivity:"2:46 pm",
         },
         {
+          id:2,
           projectname:"pqrs",
           customerimg:"doge_512.png",
           customername:"abcd1234",
@@ -29,6 +31,7 @@ export default class AllProjects extends Component {
           lastactivity:"2:46 pm",
         },
         {
+          id:3,
           projectname:"PROJECTA",
           customerimg:"doge_512.png",
           customername:"abcd123",
@@ -39,6 +42,7 @@ export default class AllProjects extends Component {
           lastactivity:"2:46 pm",
         },
         {
+          id:4,
           projectname:"PROJECTA",
           customerimg:"doge_512.png",
           customername:"abcd1234",
@@ -49,6 +53,7 @@ export default class AllProjects extends Component {
           lastactivity:"2:46 pm",
         },
         {
+          id:5,
           projectname:"PROJECTA",
           customerimg:"doge_512.png",
           customername:"abcd1234",
@@ -59,6 +64,7 @@ export default class AllProjects extends Component {
           lastactivity:"2:46 pm",
         },
         {
+          id:6,
           projectname:"PROJECTA",
           customerimg:"doge_512.png",
           customername:"abcd1234",
@@ -69,6 +75,7 @@ export default class AllProjects extends Component {
           lastactivity:"2:46 pm",
         },
         {
+          id:7,
           projectname:"PROJECTA",
           customerimg:"doge_512.png",
           customername:"abcd1234",
@@ -79,6 +86,7 @@ export default class AllProjects extends Component {
           lastactivity:"2:46 pm",
         },
         {
+          id:8,
           projectname:"PROJECTA",
           customerimg:"doge_512.png",
           customername:"abcd1234",
@@ -89,6 +97,7 @@ export default class AllProjects extends Component {
           lastactivity:"2:46 pm",
         },
         {
+          id:9,
           projectname:"PROJECTA",
           customerimg:"doge_512.png",
           customername:"abcd1234",
@@ -99,6 +108,7 @@ export default class AllProjects extends Component {
           lastactivity:"2:46 pm",
         },
         {
+          id:10,
           projectname:"PROJECTA",
           customerimg:"doge_512.png",
           customername:"abcd1234",
@@ -224,6 +234,10 @@ class ProjectsMobile extends Component {
 class ProjectRowMobile extends Component {
   constructor(props) {
     super(props);
+    this.goToProject=this.goToProject.bind(this);
+  }
+  goToProject(){
+    console.log(this.props.data.id);
   }
   render() {
     var st={
@@ -238,9 +252,10 @@ class ProjectRowMobile extends Component {
     return(
       <div className="panel panel-default">
         <div className="panel-heading">
-          <h4 className="panel-title">
+          <h4 className="panel-title col-xs-11">
             <a data-toggle="collapse" href={this.props.noncollapseid} style={st.wrap}>{this.props.data.projectname}</a>
           </h4>
+          <span className="btn glyphicon glyphicon-share-alt" style={{padding:0}} onClick={this.goToProject}></span>
         </div>
         <div id={this.props.collapseid} className="panel-collapse collapse" data-parent="#accordion">
           <table className="table table-hover" style={st.table}>
@@ -402,6 +417,11 @@ class ProjectsPC extends Component {
 class ProjectRow extends Component {
   constructor(props) {
     super(props);
+    this.goToProject=this.goToProject.bind(this);
+  }
+  goToProject(){
+    //goto this.props.data.id page
+    console.log(this.props.data.id);
   }
   render(){
     var st={
@@ -428,7 +448,7 @@ class ProjectRow extends Component {
     return(
       <tr>
         <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
-          {this.props.data.projectname}
+          <span style={{cursor:'pointer'}} onClick={this.goToProject}>{this.props.data.projectname}</span>
         </td>
         <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
           <img style={st.img} className="img-responsive img-circle col-xs-2 col-sm-2 col-md-2" id="usrimg" src={this.props.data.customerimg} width="20px" height="20px"/>

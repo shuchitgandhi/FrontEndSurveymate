@@ -12,6 +12,7 @@ export default class AllCustomersORAgents extends Component {
           lastactivity:"2:46 pm",
           projectdata:[
             {
+              id:12,
               projectname:"abcd",
               agentimg:"doge_512.png",
               agentname:"pqrs1234",
@@ -20,6 +21,7 @@ export default class AllCustomersORAgents extends Component {
               lastactivity:"2:46 pm",
             },
             {
+              id:11,
               projectname:"PROJECTB",
               agentimg:"doge_512.png",
               agentname:"pq1234",
@@ -36,6 +38,7 @@ export default class AllCustomersORAgents extends Component {
           lastactivity:"2:46 pm",
           projectdata:[
             {
+              id:10,
               projectname:"PROJECTD",
               agentimg:"doge_512.png",
               agentname:"pqrs1234",
@@ -44,6 +47,7 @@ export default class AllCustomersORAgents extends Component {
               lastactivity:"2:46 pm",
             },
             {
+              id:9,
               projectname:"PROJECTC",
               agentimg:"doge_512.png",
               agentname:"pqrs1234",
@@ -60,6 +64,7 @@ export default class AllCustomersORAgents extends Component {
           lastactivity:"2:46 pm",
           projectdata:[
             {
+              id:8,
               projectname:"PROJECTD",
               agentimg:"doge_512.png",
               agentname:"pqrs1234",
@@ -76,6 +81,7 @@ export default class AllCustomersORAgents extends Component {
           lastactivity:"2:46 pm",
           projectdata:[
             {
+              id:7,
               projectname:"PROJECTD",
               agentimg:"doge_512.png",
               agentname:"pqrs1234",
@@ -96,6 +102,7 @@ export default class AllCustomersORAgents extends Component {
           lastactivity:"2:46 pm",
           projectdata:[
             {
+              id:1,
               projectname:"abcd",
               customerimg:"doge_512.png",
               customername:"abcd1234",
@@ -104,6 +111,7 @@ export default class AllCustomersORAgents extends Component {
               lastactivity:"2:46 pm",
             },
             {
+              id:2,
               projectname:"PROJECTA",
               customerimg:"doge_512.png",
               customername:"pq1234",
@@ -119,6 +127,7 @@ export default class AllCustomersORAgents extends Component {
           lastactivity:"2:46 pm",
           projectdata:[
             {
+              id:3,
               projectname:"abcd",
               customerimg:"doge_512.png",
               customername:"dfgr1234",
@@ -127,6 +136,7 @@ export default class AllCustomersORAgents extends Component {
               lastactivity:"2:46 pm",
             },
             {
+              id:4,
               projectname:"PROJECTA",
               customerimg:"doge_512.png",
               customername:"lmjk1234",
@@ -142,6 +152,7 @@ export default class AllCustomersORAgents extends Component {
           lastactivity:"2:46 pm",
           projectdata:[
             {
+              id:5,
               projectname:"abcd",
               customerimg:"doge_512.png",
               customername:"dfgr1234",
@@ -150,6 +161,7 @@ export default class AllCustomersORAgents extends Component {
               lastactivity:"2:46 pm",
             },
             {
+              id:6,
               projectname:"PROJECTA",
               customerimg:"doge_512.png",
               customername:"lmjk1234",
@@ -177,7 +189,7 @@ export default class AllCustomersORAgents extends Component {
     this.handleSearch=this.handleSearch.bind(this);
   }
   addAgent(email){
-    console.log(email); 
+    console.log(email);
   }
   handleSearch(){
     this.setState({searchtext:this.refs.search.value.toLowerCase()});
@@ -502,27 +514,7 @@ class Row extends Component {
                   this.props.data.projectdata.map(
                     function(adata){
                       return(
-                        <tr>
-                          <td className="col-md-3 col-sm-3" style={st.whiteNoBorder}>
-                            {adata.projectname}
-                          </td>
-                          <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
-                            <img style={st.img} className="img-responsive img-circle col-xs-2 col-sm-2 col-md-2" id="usrimg" src={adata.agentimg} width="20px" height="20px"/>
-                            <span className="col-xs-10 col-sm-10 col-md-10">{adata.agentname}</span>
-                          </td>
-                          <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
-                            {adata.status}
-                          </td>
-                          <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
-                            {adata.dos}
-                          </td>
-                          <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
-                            {adata.lastactivity}
-                          </td>
-                          <td className="col-md-1 col-sm-1" style={st.whiteNoBorder}>
-                            <span className="glyphicon glyphicon-upload"></span>
-                          </td>
-                        </tr>
+                        <CustomerProjectRow data={adata}/>
                       );
                     }
                   )
@@ -585,27 +577,7 @@ class Row extends Component {
                   this.props.data.projectdata.map(
                     function(adata){
                       return(
-                        <tr>
-                          <td className="col-md-3 col-sm-3" style={st.whiteNoBorder}>
-                            {adata.projectname}
-                          </td>
-                          <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
-                            <img style={st.img} className="img-responsive img-circle col-xs-2 col-sm-2 col-md-2" id="usrimg" src={adata.customerimg} width="20px" height="20px"/>
-                            <span className="col-xs-10 col-sm-10 col-md-10">{adata.customername}</span>
-                          </td>
-                          <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
-                            {adata.status}
-                          </td>
-                          <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
-                            {adata.dos}
-                          </td>
-                          <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
-                            {adata.lastactivity}
-                          </td>
-                          <td className="col-md-1 col-sm-1" style={st.whiteNoBorder}>
-                            <span className="glyphicon glyphicon-upload"></span>
-                          </td>
-                        </tr>
+                        <AgentProjectRow data={adata} />
                       );
                     }
                   )
@@ -616,5 +588,93 @@ class Row extends Component {
         </div>
       );
     }
+  }
+}
+class CustomerProjectRow extends Component{
+  constructor(props){
+    super(props);
+    this.goToProject=this.goToProject.bind(this);
+  }
+  goToProject(){
+    console.log(this.props.data.id);
+  }
+  render(){
+    var st={
+      whiteNoBorder:{
+        border:'none',
+      },
+      img:{
+        padding:0,
+        position:'relative',
+        top:0,
+      },
+    };
+    return(
+      <tr>
+        <td className="col-md-3 col-sm-3" style={st.whiteNoBorder}>
+          <span style={{cursor:'pointer'}} onClick={this.goToProject}>{this.props.data.projectname}</span>
+        </td>
+        <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
+          <img style={st.img} className="img-responsive img-circle col-xs-2 col-sm-2 col-md-2" id="usrimg" src={this.props.data.agentimg} width="20px" height="20px"/>
+          <span className="col-xs-10 col-sm-10 col-md-10">{this.props.data.agentname}</span>
+        </td>
+        <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
+          {this.props.data.status}
+        </td>
+        <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
+          {this.props.data.dos}
+        </td>
+        <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
+          {this.props.data.lastactivity}
+        </td>
+        <td className="col-md-1 col-sm-1" style={st.whiteNoBorder}>
+          <span className="glyphicon glyphicon-upload"></span>
+        </td>
+      </tr>
+    );
+  }
+}
+class AgentProjectRow extends Component{
+  constructor(props){
+    super(props);
+    this.goToProject=this.goToProject.bind(this);
+  }
+  goToProject(){
+    console.log(this.props.data.id);
+  }
+  render(){
+    var st={
+      whiteNoBorder:{
+        border:'none',
+      },
+      img:{
+        padding:0,
+        position:'relative',
+        top:0,
+      },
+    };
+    return(
+      <tr>
+        <td className="col-md-3 col-sm-3" style={st.whiteNoBorder}>
+          <span style={{cursor:'pointer'}} onClick={this.goToProject}>{this.props.data.projectname}</span>
+        </td>
+        <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
+          <img style={st.img} className="img-responsive img-circle col-xs-2 col-sm-2 col-md-2" id="usrimg" src={this.props.data.customerimg} width="20px" height="20px"/>
+          <span className="col-xs-10 col-sm-10 col-md-10">{this.props.data.customername}</span>
+        </td>
+        <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
+          {this.props.data.status}
+        </td>
+        <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
+          {this.props.data.dos}
+        </td>
+        <td className="col-md-2 col-sm-2" style={st.whiteNoBorder}>
+          {this.props.data.lastactivity}
+        </td>
+        <td className="col-md-1 col-sm-1" style={st.whiteNoBorder}>
+          <span className="glyphicon glyphicon-upload"></span>
+        </td>
+      </tr>
+    );
   }
 }
