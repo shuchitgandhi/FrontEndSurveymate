@@ -471,8 +471,10 @@ class Row extends Component {
                     <span className="col-xs-10 col-sm-10 col-md-10">{this.props.data.customername}</span>
                   </td>
                   <td className="col-md-3 col-sm-3" style={st.whiteNoBorder}>
-                    <button data-toggle="collapse" data-parent="#accordion" data-target={this.props.noncollapseid} className="btn btn-link" type="button">{this.props.data.projectdata.length}</button>
-                    <span className="caret"></span>
+                    <div data-toggle="collapse" data-parent="#accordion" data-target={this.props.noncollapseid}>
+                      <button className="btn btn-link" type="button">{this.props.data.projectdata.length}</button>
+                      <span className="caret"></span>
+                    </div>
                   </td>
                   <td className="col-md-3 col-sm-3" style={st.whiteNoBorder}>
                     {this.props.data.firstactivity}
@@ -537,8 +539,10 @@ class Row extends Component {
                     <span className="col-xs-10 col-sm-10 col-md-10">{this.props.data.agentname}</span>
                   </td>
                   <td className="col-md-4 col-sm-4" style={st.whiteNoBorder}>
-                    <button data-toggle="collapse" data-parent="#accordion" data-target={this.props.noncollapseid} className="btn btn-link" type="button">{this.props.data.projectdata.length}</button>
-                    <span className="caret"></span>
+                    <div data-toggle="collapse" data-parent="#accordion" data-target={this.props.noncollapseid}>
+                      <button className="btn btn-link" type="button">{this.props.data.projectdata.length}</button>
+                      <span className="caret"></span>
+                    </div>
                   </td>
                   <td className="col-md-4 col-sm-4" style={st.whiteNoBorder}>
                     {this.props.data.lastactivity}
